@@ -1,6 +1,48 @@
 //*************************//
 //High speed IO design notes
 //*************************//
-TODO : copy the notes from the onenote and add them here.
+
+//*************************//
+//Introduction. issues and requirements
+//*************************//
+
+Wifi takes 0.5W for a 500MBps
 
 
+Cellular tranciever
+(GSM, PA): 3W  for 10Mbps
+
+
+Ethernet 10Gbps : 5-7W
+ 
+Transmission line channel
+distributed model when distance to travel is more that wavelength of the signal
+
+
+Delay : length*(dielectric constant)^1/2
+
+Characteristic impedance : (L/C)^1/2  (distributed L and C). Signal is transferred as a interchange of magnetic field and electric field. 
+
+Loss : Each transmission line has a resistance and conductance element attached to it which is dependent on frequency.
+
+
+Reflection :  Everytime the characteristic impedance of the medium changes, the reflection and transmitted voltage will change. This causes
+eventually lower amplitude reaching the end node.
+
+
+Skin effect : High frequency current wants to take the path of least impedance, which means that it will try to travel on the circumference of the wire instead of the middle of
+the wire. Which causes more losses. Skin depth is proportional to the frequency : (f)^-1/2 
+
+
+Dielectric loss : caused due to dielectric converting some part of the vibrations in the molecule of dielectric to heat. Directly proportional to the frequency of the signal.
+
+
+NEXT - Near end crosstalk. When a strong tx while swithcing sees a nearby impedance change, which causes the reflected signal to couple with the reciver link.
+FEXT : Far end crosstalk. When 2 lines running side by side couple with each other at some point in the long tx wire where impedance changes.
+
+Open ended vias in the pcb can cause a nasty reflection on specific frequency depending on the length of open ended via. This can cause a notch in the frequency domain diagram of the transmitted signal.
+
+
+//*************************//
+//Introduction. issues and requirements
+//*************************//
